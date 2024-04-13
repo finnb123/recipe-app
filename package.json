@@ -45,6 +45,7 @@
     "@iconify/svelte": "^3.1.6",
     "@lucia-auth/adapter-prisma": "^4.0.1",
     "@prisma/client": "^5.11.0",
+    "@vercel/analytics": "^1.2.2",
     "@vercel/speed-insights": "^1.0.10",
     "argon2": "^0.40.1",
     "oslo": "^1.2.0",
