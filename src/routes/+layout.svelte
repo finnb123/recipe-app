@@ -1,6 +1,9 @@
 <script lang="ts">
   import "../app.pcss";
   import type { LayoutServerData } from "./$types";
+  import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
+
+injectSpeedInsights();
   export let data: LayoutServerData;
 
   let showMenu = false;
