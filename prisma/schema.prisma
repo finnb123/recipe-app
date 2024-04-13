@@ -8,27 +8,27 @@ generator client {
 datasource db {
   // its easy for now but get used to using docker and
   // a database more like postgres
-  provider = "sqlite"
-  url      = env("DATABASE_URL")
+  provider = "postgres"
+  url      = "postgres://default:vI0qZR1kNUYr@ep-purple-sound-a4awhtsx.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require"
 }
 
 model User {
-  id                String @unique @id
-  username          String  @unique 
-  hashed_password   String
-  posts     Post[]
-  sessions  Session[]
+  id              String    @id @unique
+  username        String    @unique
+  hashed_password String
+  posts           Post[]
+  sessions        Session[]
 }
 
 model Post {
   // int idx are fine for now, but we should use UUIDs in the future
-  id        Int     @id @default(autoincrement())
+  id        Int      @id @default(autoincrement())
   title     String
   content   String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  published Boolean @default(false)
-  author    User?   @relation(fields: [authorId], references: [id])
+  published Boolean  @default(false)
+  author    User?    @relation(fields: [authorId], references: [id])
   authorId  String?
 }
 
@@ -36,5 +36,5 @@ model Session {
   id        String   @id
   userId    String
   expiresAt DateTime
-  user      User     @relation(fields:[userId], references: [id], onDelete: Cascade)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
