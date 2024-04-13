@@ -6,7 +6,7 @@
 
   injectSpeedInsights();
   inject();
-  
+
   export let data: LayoutServerData;
 
   let showMenu = false;
@@ -92,12 +92,12 @@
          -->
           {#if data.logged_in}
             {#each routes as route}
-              <a class="text-xl text-secondary hover:text-highlight" href={route.route}>
+              <a class="text-xl text-secondary hover:text-highlight transition-all" href={route.route}>
                 {route.name}
               </a>
             {/each}
           {:else}
-            <a class="text-xl text-secondary hover:text-highlight" href={signin.route}>
+            <a class="text-xl text-secondary hover:text-highlight transition-all" href={signin.route}>
               {signin.name}
             </a>
           {/if}
