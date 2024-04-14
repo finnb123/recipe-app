@@ -1,19 +1,30 @@
 <script lang="ts">
   import { goto } from "$app/navigation";
+
   // incorrect type!!! never use PageData in a component
   // try to use a more specific type
-  import type { PageData } from "./$types";
+  // import type { PageData } from "./$types";
+  
   // i have no idea why this is here but it shouldn't.
   // only import global CSS in the root level +layout.svelte
-  import "../../app.pcss";
+  // import "../../app.pcss";
 
-  export let post: PageData;
-  $: ({ content, title, id } = post);
+  // export let post: PageData;
+  // $: ({ content, title, id } = post);
+  interface Post {
+      content: string;
+      title: string;
+      id: number;
+      author?:{
+        username: string;
+      };
+  }
+  export let post:Post;
+  $:({content, title, id} = post);
   // $: truncated_content = content.substring(0, 500) + "...";
 </script>
 
 <!-- if you have to ignore the linter, youre probably doing some supersized weird shit -->
-<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 <div class="bg-secondary group">
   <a href="/p/{id}" class="contents">
     <div
