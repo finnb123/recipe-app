@@ -1,10 +1,6 @@
 <script lang="ts">
   import type { PageServerData } from "./$types.js";
   import Button from "$lib/components/Button.svelte";
-  const button = {
-    title: "Delete Account",
-    path: "/auth/delete_account"
-  };
   export let data: PageServerData;
   $: ({ username, posts } = data);
 </script>
@@ -47,7 +43,7 @@
         </tbody>
       </table>
     </div>
-    <Button {button}/>
+    <Button title="Delete Account" path="/auth/delete_account" />
     <!-- <div class="flex items-center justify-center">
       <div class=" w-32 mt-32 p-1 px-2 bg-button border border-stroke rounded-lg text-center">
         <a href="/auth/delete_account" class="text-buttonText text-xl"> Delete Account </a>
