@@ -52,7 +52,7 @@
           <a class=" font-bold text-headline md:text-2xl hover:text-highlight" href="/">
             <span
               class="font-poppins self-center text-3xl font-semibold whitespace-nowrap dark:text-white"
-              >Recipes.com</span
+              >Recipes</span
             >
           </a>
 

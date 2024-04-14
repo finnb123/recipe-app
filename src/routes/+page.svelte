@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { PageData } from "./$types";
   import Post from "$lib/components/Post.svelte";
+  import Loading from "$lib/components/Loading.svelte";
   
   export let data: PageData;
   let {feed} = data;
@@ -8,13 +9,7 @@
 
 <main class="bg-secondary">
   {#await feed}
-  <div class="h-screen flex items-center justify-center">
-      <div class="bg-background rounded-lg p-4 mb-64">
-        <p class="text-4xl text-headline">
-          ...loading
-        </p>
-      </div>
-  </div>
+    <Loading />
   {:then feed}
     {#each feed as post (post.id)}
       <Post {post}/>
