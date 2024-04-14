@@ -12,13 +12,10 @@
   // export let post: PageData;
   // $: ({ content, title, id } = post);
   interface Post {
-      content: string;
+      content: string | null;
       title: string;
-      id: number;
-      author?:{
-        username: string;
-      };
-  }
+      id: number;  
+    }
   export let post:Post;
   $:({content, title, id} = post);
   // $: truncated_content = content.substring(0, 500) + "...";
@@ -32,9 +29,9 @@
       class="container bg-background p-8 w-3/5 h-60 m-auto mt-8 hover:shadow-xl border-solid border-2 border-stroke overflow-hidden rounded-md"
     >
       <h2 class="text-3xl mb-2 text-headline group-hover:text-highlight transition-all">{title}</h2>
-      <small class="text-xl text-paragraph"
+      <!-- <small class="text-xl text-paragraph"
         >{post.author?.username ? `By ${post.author.username}` : "Unknown author"}</small
-      >
+      > -->
       <p class="text-md text-paragraph whitespace-pre-wrap">{content}</p>
     </div>
   </a>

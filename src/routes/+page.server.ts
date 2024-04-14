@@ -1,21 +1,21 @@
 import prisma from "$lib/server/prisma";
-import type { PageServerLoad, Actions } from "./$types";
-import { lucia } from "$lib/server/auth";
-import { fail, redirect } from "@sveltejs/kit";
+import { string } from "zod";
+import type { PageServerLoad } from "./$types";
 
-export const load: PageServerLoad = (async (event) => {
+export const load: PageServerLoad = (async () => {
   // should also be a function, you could probably
   // skip awaiting it here and do that in the template
 
-  const response = await prisma.post.findMany({
+  const response =  prisma.post.findMany({
     where: { published: true },
-    include: { author: true },
+    select: {
+      content: true,
+      title: true,
+      id: true,
+      },
   });
-
-  return {
-    feed: response,
-  };
-}) satisfies PageServerLoad;
+  return {feed: response} 
+});
 
 // export const actions: Actions = {
 //     // signout: async (event) => {
