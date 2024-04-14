@@ -6,9 +6,9 @@
   let {feed} = data;
 </script>
 
-<main>
+<main class="bg-secondary">
   {#await feed}
-  <div class="h-screen flex items-center justify-center bg-secondary">
+  <div class="h-screen flex items-center justify-center">
       <div class="bg-background rounded-lg p-4 mb-64">
         <p class="text-4xl text-headline">
           ...loading
@@ -17,8 +17,8 @@
   </div>
   {:then feed}
     {#each feed as post (post.id)}
-      <Post {post} />
-      <div class="h-4 bg-secondary"></div>
+      <Post {post}/>
+      <div class="h-4"></div>
     {/each}
   {/await}
 </main>

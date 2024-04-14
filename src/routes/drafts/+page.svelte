@@ -7,7 +7,7 @@
   export let data: PageData;
 </script>
 
-<div>
+<div class="bg-secondary">
   <h1 class="text-3xl text-center text-headline">Recipe Drafts</h1>
   <main>
     <div class="text-lg text-center mt-6">

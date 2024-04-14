@@ -6,7 +6,7 @@
   $: ({ post, userId } = data);
 </script>
 
-<div class="flex flex-col items-center justify-center">
+<div class="flex flex-col items-center justify-center bg-secondary">
   <div class="flex flex-col w-3/4 rounded-xl bg-background py-12">
     <h2 class="my-0 mx-auto text-center text-3xl text-headline">
       {post.title}
