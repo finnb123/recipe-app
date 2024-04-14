@@ -3,6 +3,7 @@
   import type { LayoutServerData } from "./$types";
   import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
   import { inject } from '@vercel/analytics'
+  
 
   injectSpeedInsights();
   inject();
@@ -21,9 +22,9 @@
   const routes: Route[] = [
     { name: "Profile", route: "/profile" },
     { name: "Drafts", route: "/drafts" },
-    { name: "Sign Out", route: "/auth/signout" },
+    { name: "Sign Out", route: "/auth/logout" },
   ];
-  const signin: Route = { name: "Sign In", route: "/auth/signin" };
+  const signin: Route = { name: "Log In", route: "/auth/login" };
 
   // don't create a separate signIn object, you can either
   // use a ternary operator or a conditional block here

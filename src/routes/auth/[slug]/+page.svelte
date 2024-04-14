@@ -1,11 +1,12 @@
-<script lang="ts">
+<!-- <script lang="ts">
   import type { ActionData, PageServerData } from "./$types";
+  import Button from "$lib/components/buttons/Button.svelte";
+  import Logout from "$lib/components/auth/Logout.svelte";
   export let data: PageServerData;
   // const { slug, title } = data;
   export let form: ActionData;
   import { enhance } from "$app/forms";
 
-  let submitted = false;
   let show_password = false;
   $: type = show_password ? "text" : "password";
   console.log(data.slug);
@@ -78,26 +79,27 @@
               <a
                 class="text-sm p-2 px-4 w-max text-buttonText text-center bg-button hover:shadow-md rounded"
                 href="/auth/signup">Click here to sign up</a
-              >
+              > -->
+              <!-- <Button title="Click here to sign up" path="/auth/signup"/>
             {/if}
             {#if data.slug === "signup"}
-              <a
+             <a
                 class="text-sm p-2 px-4 w-max text-buttonText text-center bg-button hover:shadow-md rounded"
                 href="/auth/signin">Click here to sign in</a
-              >
+              > -->
+              <!-- <Button title="Click here to sign in" path="/auth/signin"/>
             {/if}
           </div>
         {/if}
-      {:else}
-        <button type="submit" class="flex items-center justify-center">
-          <!-- {data.title} -->
+      {:else} --> 
+        <!-- <button type="submit" class="flex items-center justify-center">
           <img
             class="w-1/4"
             src="https://thumbs.dreamstime.com/b/logout-isolated-special-red-round-button-abstract-illustration-logout-special-red-round-button-103921368.jpg"
             alt="Logout button"
           />
-        </button>
-      {/if}
+        </button> -->
+      <!-- {/if}
     </form>
   </div>
-</div>
+</div> --> 

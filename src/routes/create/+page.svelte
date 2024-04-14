@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { ActionData } from "./$types";
-  import MinorButton from "$lib/components/MinorButton.svelte";
+  import MinorButton from "$lib/components/buttons/MinorButton.svelte";
 
   export let form: ActionData;
 </script>
@@ -25,9 +25,9 @@
         rows="8"
         value={form?.content ?? ""}
       />
-      <div class="flex flex-col pt-4 w-3/4">
+      <div class="flex flex-col w-full max-w-96 items-center justify-center pt-4">
         <button
-          class="text-xl text-buttonText bg-button py-4 px-8 rounded-lg text-center"
+          class="w-full text-xl text-buttonText bg-button py-4 px-8 rounded-lg text-center"
           type="submit"
         >
           Create
@@ -35,7 +35,7 @@
         <!-- <a class="mt-2 text-lg text-buttonText bg-button py-2 px-4 rounded-lg text-center" href="/"
           >Cancel
         </a> -->
-        <MinorButton title="Cancel" path="/"/>
+        <MinorButton title="Cancel" path="/" class="mt-2 w-full" />
       </div>
     </form>
   </div>

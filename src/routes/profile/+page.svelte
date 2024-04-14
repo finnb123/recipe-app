@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { PageServerData } from "./$types.js";
-  import Button from "$lib/components/Button.svelte";
+  import Button from "$lib/components/buttons/Button.svelte";
   export let data: PageServerData;
   $: ({ username, posts } = data);
 </script>
@@ -23,6 +23,7 @@
         </thead>
         <tbody class="text-xl text-headline">
           {#each posts as { title, published, id }, i}
+          <a href="/p/{id}" class="contents">
             <tr
               class="odd:bg-background even:bg-secondary odd:hover:text-highlight even:hover:text-background"
             >
@@ -30,7 +31,7 @@
                 scope="row"
                 class="px-4 py-4 first-letter:font-mediumext-headline whitespace-nowrap">{i + 1}</th
               >
-              <td class="px-2 py-4"> <a href="/p/{id}">{title}</a></td>
+              <td class="px-2 py-4">{title}</td>
               <td class="px-2 py-4 text-center">
                 {#if published}
                   <p>✅</p>
@@ -39,11 +40,12 @@
                 {/if}
               </td>
             </tr>
+          </a>
           {/each}
         </tbody>
       </table>
     </div>
-    <Button title="Delete Account" path="/auth/delete_account" />
+    <Button title="Delete Account" path="/auth/delete" class="mt-64" />
     <!-- <div class="flex items-center justify-center">
       <div class=" w-32 mt-32 p-1 px-2 bg-button border border-stroke rounded-lg text-center">
         <a href="/auth/delete_account" class="text-buttonText text-xl"> Delete Account </a>

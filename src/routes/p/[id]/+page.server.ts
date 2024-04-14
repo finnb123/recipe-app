@@ -1,12 +1,12 @@
-import prisma from "$lib/server/prisma";
 import { error, redirect } from "@sveltejs/kit";
+import prisma from "$lib/server/prisma";
 import type { PageServerLoad, Actions } from "./$types";
 
 export const load = (async ({ params: { id }, locals }) => {
   if (!locals.user) {
     redirect(303, "/auth/signin");
   }
-  let userId = locals.user.id;
+  const userId = locals.user.id;
   const post = await prisma.post.findUnique({
     where: { id: Number(id) },
     include: { author: true },
@@ -43,4 +43,4 @@ export const actions = {
 
     throw redirect(303, "/");
   },
-};
+} satisfies Actions;
