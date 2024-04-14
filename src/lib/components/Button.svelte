@@ -1,8 +1,4 @@
 <script lang="ts">
-    interface Button{
-        title: string;
-        path: string;
-    }
     export let title:string;
     export let path:string;
 </script>

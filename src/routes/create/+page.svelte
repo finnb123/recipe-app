@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { ActionData } from "./$types";
+  import MinorButton from "$lib/components/MinorButton.svelte";
 
   export let form: ActionData;
 </script>
@@ -31,9 +32,10 @@
         >
           Create
         </button>
-        <a class="mt-2 text-lg text-buttonText bg-button py-2 px-4 rounded-lg text-center" href="/"
+        <!-- <a class="mt-2 text-lg text-buttonText bg-button py-2 px-4 rounded-lg text-center" href="/"
           >Cancel
-        </a>
+        </a> -->
+        <MinorButton title="Cancel" path="/"/>
       </div>
     </form>
   </div>
