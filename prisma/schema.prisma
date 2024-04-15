@@ -8,8 +8,9 @@ generator client {
 datasource db {
   // its easy for now but get used to using docker and
   // a database more like postgres
-  provider = "postgres"
-  url      = "postgres://default:vI0qZR1kNUYr@ep-purple-sound-a4awhtsx.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require"
+  provider  = "postgres"
+  url       = env("POSTGRES_PRISMA_URL")
+  directUrl = env("POSTGRES_URL_NON_POOLING")
 }
 
 model User {

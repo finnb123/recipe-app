@@ -4,7 +4,7 @@ import type { PageServerLoad, Actions } from "./$types";
 
 export const load = (async ({ params: { id }, locals }) => {
   if (!locals.user) {
-    redirect(303, "/auth/signin");
+    redirect(303, "/auth/login");
   }
   const userId = locals.user.id;
   const post = await prisma.post.findUnique({
