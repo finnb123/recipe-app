@@ -11,7 +11,7 @@
     "format": "prettier . --write",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "vercel-build": "prisma generate && prisma migrate deploy && next build"
+    "migrate": "prisma migrate deploy"
   },
   "devDependencies": {
     "@iconify-json/mdi": "^1.1.64",
