@@ -49,6 +49,7 @@
     "@vercel/analytics": "^1.2.2",
     "@vercel/speed-insights": "^1.0.10",
     "argon2": "^0.40.1",
+    "obscenity": "^0.2.1",
     "oslo": "^1.2.0",
     "ts-node": "^10.9.2",
     "zod": "^3.22.4"
