@@ -1,4 +1,4 @@
-import { redirect } from "@sveltejs/kit"
+import { redirect } from "@sveltejs/kit";
 import prisma from "$lib/server/prisma";
 import type { PageServerLoad } from "./$types";
 
@@ -11,7 +11,7 @@ export const load: PageServerLoad = async (event) => {
   // when you actually have to mutate them
   // this is a good practice to follow and you won't
   // mutate values as often as you think
-  const posts =  prisma.post.findMany({
+  const posts = prisma.post.findMany({
     where: { authorId: id },
   });
   return {

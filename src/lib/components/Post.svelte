@@ -4,7 +4,7 @@
   // incorrect type!!! never use PageData in a component
   // try to use a more specific type
   // import type { PageData } from "./$types";
-  
+
   // i have no idea why this is here but it shouldn't.
   // only import global CSS in the root level +layout.svelte
   // import "../../app.pcss";
@@ -12,12 +12,12 @@
   // export let post: PageData;
   // $: ({ content, title, id } = post);
   interface Post {
-      content: string | null;
-      title: string;
-      id: number;  
-    }
-  export let post:Post;
-  $:({content, title, id} = post);
+    content: string | null;
+    title: string;
+    id: number;
+  }
+  export let post: Post;
+  $: ({ content, title, id } = post);
   // $: truncated_content = content.substring(0, 500) + "...";
 </script>
 

@@ -21,12 +21,11 @@
   <div class="my-0 mx-auto mt-12 mb-8 text-center">
     <form method="post" class="actions">
       {#if !post.published}
-        <FormButton title="Publish" action="publishPost"/>
+        <FormButton title="Publish" action="publishPost" />
       {/if}
       {#if post.author?.id === userId}
-        <FormButton title="Delete" action="deletePost"/>
+        <FormButton title="Delete" action="deletePost" />
       {/if}
     </form>
   </div>
 </div>
-

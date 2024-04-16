@@ -11,7 +11,7 @@
     "format": "prettier . --write",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "migrate": "prisma migrate deploy"
+    "ver": "prisma migrate deploy"
   },
   "devDependencies": {
     "@iconify-json/mdi": "^1.1.64",

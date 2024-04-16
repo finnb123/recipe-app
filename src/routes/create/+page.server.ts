@@ -5,9 +5,11 @@ import type { Actions, PageServerLoad } from "./$types";
 
 export const actions = {
   default: async ({ request, locals }) => {
-    if (!locals.user) { return fail(401, { msg: "No user" }); }
+    if (!locals.user) {
+      return fail(401, { msg: "No user" });
+    }
     const { username } = locals.user;
-   
+
     const formData = await request.formData();
     const object = Object.fromEntries(formData.entries());
     const Schema = z.object({
@@ -16,10 +18,10 @@ export const actions = {
     });
     const { success, error, data } = Schema.safeParse(object);
 
-    if (!success) { return fail(422, { msg: error.message }) }
+    if (!success) {
+      return fail(422, { msg: error.message });
+    }
     const { title, content } = data;
-
-    
 
     // let title = data.get("title");
     // let content = data.get("content");

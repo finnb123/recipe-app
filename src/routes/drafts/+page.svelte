@@ -17,7 +17,7 @@
       >
         Create new recipe
       </a> -->
-      <MinorButton title="Create new recipe" path="/create" class=""/>
+      <MinorButton title="Create new recipe" path="/create" class="" />
     </div>
     <div>
       {#each data.drafts as post (post.id)}

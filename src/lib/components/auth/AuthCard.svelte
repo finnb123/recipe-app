@@ -1,20 +1,19 @@
 <script lang="ts">
-    import { enhance } from "$app/forms";
-    import type {HTMLButtonAttributes} from "svelte/elements";
+  import { enhance } from "$app/forms";
+  import type { HTMLButtonAttributes } from "svelte/elements";
 
-    let submitted = false;
-    let show_password = false;
-    $: type = show_password ? "text" : "password";
+  let submitted = false;
+  let show_password = false;
+  $: type = show_password ? "text" : "password";
 </script>
 
-<div {...$$restProps} class="w-full w-max-36 p-12 rounded-lg flex items-center justify-center {$$props.class}">
+<div
+  {...$$restProps}
+  class="w-full w-max-36 p-12 rounded-lg flex items-center justify-center {$$props.class}"
+>
   <div class="bg-background p-12 py-16 rounded-lg items-center justify-center">
-    <form
-      class="rounded-lg"
-      method="post"
-      use:enhance
-    >
-    <slot>Fallback content</slot>
+    <form class="rounded-lg" method="post" use:enhance>
+      <slot>Fallback content</slot>
     </form>
   </div>
 </div>

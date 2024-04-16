@@ -2,20 +2,20 @@ import prisma from "$lib/server/prisma";
 import { string } from "zod";
 import type { PageServerLoad } from "./$types";
 
-export const load: PageServerLoad = (async () => {
+export const load: PageServerLoad = async () => {
   // should also be a function, you could probably
   // skip awaiting it here and do that in the template
 
-  const response =  prisma.post.findMany({
+  const response = prisma.post.findMany({
     where: { published: true },
     select: {
       content: true,
       title: true,
       id: true,
-      },
+    },
   });
-  return {feed: response} 
-});
+  return { feed: response };
+};
 
 // export const actions: Actions = {
 //     // signout: async (event) => {

@@ -1,9 +1,8 @@
 <script lang="ts">
   import "../app.pcss";
   import type { LayoutServerData } from "./$types";
-  import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
-  import { inject } from '@vercel/analytics'
-  
+  import { injectSpeedInsights } from "@vercel/speed-insights/sveltekit";
+  import { inject } from "@vercel/analytics";
 
   injectSpeedInsights();
   inject();
@@ -93,12 +92,18 @@
          -->
           {#if data.logged_in}
             {#each routes as route}
-              <a class="text-xl text-secondary hover:text-highlight transition-all" href={route.route}>
+              <a
+                class="text-xl text-secondary hover:text-highlight transition-all"
+                href={route.route}
+              >
                 {route.name}
               </a>
             {/each}
           {:else}
-            <a class="text-xl text-secondary hover:text-highlight transition-all" href={signin.route}>
+            <a
+              class="text-xl text-secondary hover:text-highlight transition-all"
+              href={signin.route}
+            >
               {signin.name}
             </a>
           {/if}
