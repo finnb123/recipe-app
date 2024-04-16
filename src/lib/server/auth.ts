@@ -1,3 +1,4 @@
+/* eslint arrow-body-style: 0 */
 import { Lucia, TimeSpan } from "lucia";
 import { PrismaAdapter } from "@lucia-auth/adapter-prisma";
 import { PrismaClient } from "@prisma/client";
@@ -11,14 +12,6 @@ import { dev } from "$app/environment";
 // ages in an import, bad bad bad
 const client = new PrismaClient();
 const adapter = new PrismaAdapter(client.session, client.user);
-
-// this should be in app.d.ts
-declare module "lucia" {
-  interface Register {
-    Lucia: typeof lucia;
-    DatabaseUserAttributes: DatabaseUserAttributes;
-  }
-}
 
 interface DatabaseUserAttributes {
   username: string;
@@ -46,6 +39,14 @@ export const lucia = new Lucia(adapter, {
     };
   },
 });
+
+// this should be in app.d.ts
+declare module "lucia" {
+  interface Register {
+    Lucia: typeof lucia;
+    DatabaseUserAttributes: DatabaseUserAttributes;
+  }
+}
 
 let clientCache = null;
 let adapterCache = null;

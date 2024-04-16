@@ -55,6 +55,6 @@ export const actions = {
       }
       return fail(400, { message: "Prisma Error" });
     }
-    redirect(302, "/");
+    return redirect(302, "/");
   },
 };

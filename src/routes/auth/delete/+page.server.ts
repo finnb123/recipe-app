@@ -1,4 +1,4 @@
-import { error, fail, redirect } from "@sveltejs/kit";
+import {  fail, redirect } from "@sveltejs/kit";
 import { z } from "zod";
 import { Argon2id } from "oslo/password";
 import { deleteManyPost, deleteUser } from "$lib/server/db.js";
@@ -40,6 +40,6 @@ export const actions = {
     } catch (e) {
       return fail(401, { msg: "error deleting posts" });
     }
-    redirect(302, "/");
+    return redirect(302, "/");
   },
 };

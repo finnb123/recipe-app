@@ -1,8 +1,8 @@
 <script lang="ts">
   import "../app.pcss";
-  import type { LayoutServerData } from "./$types";
   import { injectSpeedInsights } from "@vercel/speed-insights/sveltekit";
   import { inject } from "@vercel/analytics";
+  import type { LayoutServerData } from "./$types";
 
   injectSpeedInsights();
   inject();
@@ -10,7 +10,7 @@
   export let data: LayoutServerData;
 
   let showMenu = false;
-  let toggleNavbar = () => {
+  const toggleNavbar = () => {
     showMenu = !showMenu;
   };
 
@@ -80,9 +80,9 @@
         </div>
 
         <div
-          class="flex-col mt-8 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0 {showMenu
-            ? 'flex'
-            : 'hidden'}"
+          class='flex-col mt-8 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0 {showMenu
+            ? "flex"
+            : "hidden"}'
         >
           <!-- 
           when using complex pageloaddata values,

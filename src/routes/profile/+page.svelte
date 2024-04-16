@@ -2,6 +2,7 @@
   import type { PageServerData } from "./$types.js";
   import Button from "$lib/components/buttons/Button.svelte";
   import Loading from "$lib/components/Loading.svelte";
+
   export let data: PageServerData;
   $: ({ username, posts } = data);
 </script>
@@ -13,7 +14,7 @@
   <div class="flex items-center justify-center relative overflow-x-auto mt-6">
     {#await posts}
       <Loading />
-    {:then posts}
+    {:then loaded}
       <table
         class="w-1/2 text-sm text-left rtl:text-right text-headline table-auto border-2 border-stroke"
       >
@@ -26,7 +27,7 @@
         </thead>
 
         <tbody class="text-xl text-headline">
-          {#each posts as { title, published, id }, i}
+          {#each loaded as { title, published, id }, i}
             <a href="/p/{id}" class="contents">
               <tr
                 class="odd:bg-background even:bg-secondary odd:hover:text-highlight even:hover:text-background"

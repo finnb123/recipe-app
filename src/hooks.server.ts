@@ -1,13 +1,12 @@
-// src/hooks.server.ts
-import { initialiseDbAndLucia, lucia } from "$lib/server/auth";
 import type { Handle } from "@sveltejs/kit";
+import {  lucia } from "$lib/server/auth";
 
 export const handle: Handle = async ({ event, resolve }) => {
   // extract this to a function, its a lot
   const sessionId = event.cookies.get(lucia.sessionCookieName);
   if (!sessionId) {
-    event.locals.user = null;
-    event.locals.session = null;
+    event.locals.user = null; // eslint-disable-line no-param-reassign
+    event.locals.session = null; // eslint-disable-line no-param-reassign
     return resolve(event);
   }
 
@@ -26,8 +25,8 @@ export const handle: Handle = async ({ event, resolve }) => {
       ...sessionCookie.attributes,
     });
   }
-  event.locals.user = user;
-  event.locals.session = session;
+  event.locals.user = user; // eslint-disable-line no-param-reassign
+  event.locals.session = session; // eslint-disable-line no-param-reassign
 
-  return await resolve(event);
+  return resolve(event);
 };

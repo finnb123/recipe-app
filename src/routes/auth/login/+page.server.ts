@@ -36,6 +36,6 @@ export const actions = {
       path: ".",
       ...sessionCookie.attributes,
     });
-    redirect(302, "/");
+    return redirect(302, "/");
   },
 };

@@ -1,9 +1,10 @@
 <script lang="ts">
   import AuthCard from "$lib/components/auth/AuthCard.svelte";
   import type { ActionData } from "./$types";
+
   export let form: ActionData;
-  let show_password = false;
-  $: type = show_password ? "text" : "password";
+  let showPassword = false;
+  $: type = showPassword ? "text" : "password";
 </script>
 
 <AuthCard>
@@ -37,7 +38,7 @@
     <button
       class="w-full max-w-96 py-2 px-4 bg-button rounded-lg text-center text-buttonText text-md"
       type="button"
-      on:click={() => (show_password = !show_password)}
+      on:click={() => (showPassword = !showPassword)}
     >
       Show Password
     </button>

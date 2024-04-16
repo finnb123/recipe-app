@@ -1,10 +1,5 @@
 <script lang="ts">
   import { enhance } from "$app/forms";
-  import type { HTMLButtonAttributes } from "svelte/elements";
-
-  let submitted = false;
-  let show_password = false;
-  $: type = show_password ? "text" : "password";
 </script>
 
 <div

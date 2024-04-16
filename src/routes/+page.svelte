@@ -4,14 +4,14 @@
   import Loading from "$lib/components/Loading.svelte";
 
   export let data: PageData;
-  let { feed } = data;
+  const { feed } = data;
 </script>
 
 <main class="bg-secondary">
   {#await feed}
     <Loading />
-  {:then feed}
-    {#each feed as post (post.id)}
+  {:then loaded}
+    {#each loaded as post (post.id)}
       <Post {post} />
       <div class="h-4"></div>
     {/each}

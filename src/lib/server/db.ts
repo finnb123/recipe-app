@@ -16,7 +16,7 @@ export const deleteUser = async (email: string) => {
 export const deletePost = async (id: number) => {
   const response = await prisma.post.delete({
     where: {
-      id: id,
+      id,
     },
   });
   return response;

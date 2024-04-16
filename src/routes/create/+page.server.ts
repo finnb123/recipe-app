@@ -23,18 +23,6 @@ export const actions = {
     }
     const { title, content } = data;
 
-    // let title = data.get("title");
-    // let content = data.get("content");
-    // let authorEmail = userId;
-
-    // if (!title || !content) {
-    //   return fail(400, { content, title, missing: true });
-    // }
-
-    // if (typeof title != "string" || typeof content != "string") {
-    //   return fail(400, { content, title, incorrect: true });
-    // }
-
     await prisma.post.create({
       data: {
         title,
@@ -43,7 +31,7 @@ export const actions = {
       },
     });
 
-    redirect(303, "/drafts");
+    return redirect(303, "/drafts");
   },
 } satisfies Actions;
 
