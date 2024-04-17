@@ -1,0 +1,7 @@
+/.svelte-kit
+/node_modules
+.vercel
+pnpm-lock.yaml
+.eslint.json
+.vscode
+.contentlayer
