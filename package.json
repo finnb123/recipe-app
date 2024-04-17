@@ -9,6 +9,7 @@
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "format": "prettier . --write",
+    "format:check:ci": "prettier --check",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "ver": "prisma migrate deploy"
