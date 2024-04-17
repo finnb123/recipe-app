@@ -79,14 +79,13 @@
           </div>
         </div>
         
-        <!-- prettier-ignore -->
+        <!-- prettier-ignore-attribute -->
         <div
           class="flex-col mt-8 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0 {showMenu
             ? 'flex'
             : 'hidden'}"
         >
 
-        
           <!-- 
           when using complex pageloaddata values,
           destructure with a reactive binding in the
