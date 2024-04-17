@@ -25,6 +25,8 @@
   ];
   const signin: Route = { name: "Log In", route: "/auth/login" };
 
+  enum Show {Flex="flex", Hidden="hidden"}
+
   // don't create a separate signIn object, you can either
   // use a ternary operator or a conditional block here
   // you can also use .filter() in the template with an
@@ -81,9 +83,9 @@
         
         <!-- prettier-ignore-attribute -->
         <div
-          class="flex-col mt-8 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0 {showMenu
-            ? 'flex'
-            : 'hidden'}"
+          class="first-letter:flex-col mt-8 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0 {showMenu
+            ? Show.Flex
+            : Show.Hidden}"
         >
 
           <!-- 
