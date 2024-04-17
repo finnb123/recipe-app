@@ -25,10 +25,10 @@
   ];
   const signin: Route = { name: "Log In", route: "/auth/login" };
 
-  enum Show {
+  enum Show {  // eslint-disable-line no-shadow
     Flex = "flex",
     Hidden = "hidden",
-  } // eslint-disable-line no-shadow
+  }
 
   // don't create a separate signIn object, you can either
   // use a ternary operator or a conditional block here
