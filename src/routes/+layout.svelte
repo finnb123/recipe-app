@@ -25,7 +25,7 @@
   ];
   const signin: Route = { name: "Log In", route: "/auth/login" };
 
-  enum Show {  // eslint-disable-line no-shadow
+  enum Show { // eslint-disable-line no-shadow
     Flex = "flex",
     Hidden = "hidden",
   }
