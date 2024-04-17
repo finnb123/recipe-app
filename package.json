@@ -43,7 +43,6 @@
     "seed": "ts-node prisma/seed.js"
   },
   "dependencies": {
-    "@iconify/svelte": "^3.1.6",
     "@lucia-auth/adapter-prisma": "^4.0.1",
     "@prisma/client": "^5.11.0",
     "@vercel/analytics": "^1.2.2",
