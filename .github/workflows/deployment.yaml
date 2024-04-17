@@ -1,34 +1,37 @@
 name: Node.js CI
 on:
-    push:
-        branches: "**"
-    pull_request:
-        branches: "**"
+  push:
+    branches: "**"
+  pull_request:
+    branches: "**"
 jobs:
-    build:
-        runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-latest
 
-        strategy:
-            matrix:
-                node-version: [21.6.x]
-        
-        steps:
-            - uses: actions/checkout@v2
+    strategy:
+      matrix:
+        node-version: [21.6.x]
 
-            - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v2
-              with:
-                    node-version: ${{ matrix.node-version }}
-                    cache: "npm"
-            
-            - name: Run CI command
-              run: npm ci
-            
-            - name: Check linting
-              run: npm run lint
+    steps:
+      - uses: actions/checkout@v2
 
-            # - name: Run the tests
-            #   run: npm run test
-            
-            - name: Build
-              run: npm run build
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+
+      - name: Run CI command
+        run: npm ci
+
+      - name: Check linting
+        run: npm run lint
+      
+      - name: Run prettier
+        run: npm run format
+
+      # - name: Run the tests
+      #   run: npm run test
+
+      - name: Build
+        run: npm run build

@@ -2,7 +2,7 @@
   import AuthCard from "$lib/components/auth/AuthCard.svelte";
   import Button from "$lib/components/buttons/Button.svelte";
   import type { ActionData } from "./$types";
-  
+
   export let form: ActionData;
   let showPassword = false;
   $: type = showPassword ? "text" : "password";

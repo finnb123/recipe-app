@@ -1,5 +1,5 @@
 import type { Handle } from "@sveltejs/kit";
-import {  lucia } from "$lib/server/auth";
+import { lucia } from "$lib/server/auth";
 
 export const handle: Handle = async ({ event, resolve }) => {
   // extract this to a function, its a lot
