@@ -25,7 +25,10 @@
   ];
   const signin: Route = { name: "Log In", route: "/auth/login" };
 
-  enum Show {Flex="flex", Hidden="hidden"} // eslint-disable-line no-shadow
+  enum Show {
+    Flex = "flex",
+    Hidden = "hidden",
+  } // eslint-disable-line no-shadow
 
   // don't create a separate signIn object, you can either
   // use a ternary operator or a conditional block here
@@ -80,14 +83,13 @@
             </button>
           </div>
         </div>
-        
+
         <!-- prettier-ignore-attribute -->
         <div
           class="first-letter:flex-col mt-8 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0 {showMenu
             ? Show.Flex
             : Show.Hidden}"
         >
-
           <!-- 
           when using complex pageloaddata values,
           destructure with a reactive binding in the
