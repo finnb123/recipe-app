@@ -1,7 +1,6 @@
 <h1 align="center" style="font-weight: bold;">Recipe App 💻</h1>
 
 <p align="center">
-<a href="#tech">Technologies</a>
 </p>
 <p align="center">Recipe sharing website</p>
 <p align="center">
