@@ -1,38 +1,33 @@
-# create-svelte
+<h1 align="center" style="font-weight: bold;">Recipe App 💻</h1>
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
-
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+<p align="center">
+<a href="#tech">Technologies</a>
+</p>
+<p align="center">Recipe sharing website</p>
+<p align="center">
+<a href="https://recipes.brendan.monster/oding">📱 Visit this Project</a>
+</p>
+<h2 id="technologies">💻 Technologies</h2>
+<ul>
+  <li>
+    Sveltekit
+  </li>
+  <li>
+    Typescript
+  </li>
+  <li>
+    PostgreSQL  
+  </li>
+  <li>
+    TailwindCSS
+  </li>
+  <li>
+    Prisma ORM  
+  </li>
+  <li>
+    Lucia Auth  
+  </li>
+  <li>
+    Vercel  
+  </li>
+</ul>
