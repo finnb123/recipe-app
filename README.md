@@ -4,7 +4,7 @@
 </p>
 <p align="center">Recipe sharing website</p>
 <p align="center">
-<a href="https://recipes.brendan.monster/oding">📱 Visit this Project</a>
+<a href="https://recipes.brendan.monster">📱 Visit this Project</a>
 </p>
 <h2 id="technologies">💻 Technologies</h2>
 <ul>
