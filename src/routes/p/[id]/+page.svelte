@@ -49,7 +49,6 @@
         >
           {name}
         </button>
-        <p>{editPost}</p>
       {/if}
     </form>
   </div>
