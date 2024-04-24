@@ -10,7 +10,7 @@ import { dev } from "$app/environment";
 // also, its just horrible to have 2 prisma clients
 // because its a massive native binary that takes
 // ages in an import, bad bad bad
-const client = new PrismaClient();
+export const client = new PrismaClient();
 const adapter = new PrismaAdapter(client.session, client.user);
 
 interface DatabaseUserAttributes {
@@ -48,52 +48,52 @@ declare module "lucia" {
   }
 }
 
-let clientCache = null;
-let adapterCache = null;
-let luciaCache = null;
+// let clientCache = null;
+// let adapterCache = null;
+// let luciaCache = null;
 
-export const initialiseDbAndLucia = () => {
-  if (!clientCache) {
-    clientCache = new PrismaClient();
-  }
-  if (!adapterCache) {
-    adapterCache = new PrismaAdapter(clientCache.session, clientCache.user);
-  }
-  if (!luciaCache) {
-    luciaCache = new Lucia(adapterCache, {
-      // thats short
-      sessionExpiresIn: new TimeSpan(1, "h"),
-      sessionCookie: {
-        attributes: {
-          // smart but also use import.meta.env.DEV
-          secure: !dev,
-        },
-      },
-      getUserAttributes: (attributes) => {
-        return {
-          username: attributes.username,
-          id: attributes.id,
-        };
-      },
-    });
-  }
-  // const adapter = new PrismaAdapter(client.session, client.user)
-  // const lucia = new Lucia(adapter, {
-  //     // thats short
-  //     sessionExpiresIn: new TimeSpan(1, "h"),
-  //     sessionCookie: {
-  //         attributes: {
-  //             // smart but also use import.meta.env.DEV
-  //             secure: !dev
-  //         }
-  //     },
-  //     getUserAttributes: (attributes) => {
-  //         return {
-  //             username: attributes.username,
-  //             id: attributes.id
-  //         };
-  //     }
-  // });
+// export const initialiseDbAndLucia = () => {
+//   if (!clientCache) {
+//     clientCache = new PrismaClient();
+//   }
+//   if (!adapterCache) {
+//     adapterCache = new PrismaAdapter(clientCache.session, clientCache.user);
+//   }
+//   if (!luciaCache) {
+//     luciaCache = new Lucia(adapterCache, {
+//       // thats short
+//       sessionExpiresIn: new TimeSpan(6, "h"),
+//       sessionCookie: {
+//         attributes: {
+//           // smart but also use import.meta.env.DEV
+//           secure: !dev,
+//         },
+//       },
+//       getUserAttributes: (attributes) => {
+//         return {
+//           username: attributes.username,
+//           id: attributes.id,
+//         };
+//       },
+//     });
+//   }
+// const adapter = new PrismaAdapter(client.session, client.user)
+// const lucia = new Lucia(adapter, {
+//     // thats short
+//     sessionExpiresIn: new TimeSpan(1, "h"),
+//     sessionCookie: {
+//         attributes: {
+//             // smart but also use import.meta.env.DEV
+//             secure: !dev
+//         }
+//     },
+//     getUserAttributes: (attributes) => {
+//         return {
+//             username: attributes.username,
+//             id: attributes.id
+//         };
+//     }
+// });
 
-  return { client: clientCache, lucia: luciaCache };
-};
+//   return { client: clientCache, lucia: luciaCache };
+// };

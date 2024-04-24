@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { PageData } from "./$types";
-  import Post from "$lib/components/Post.svelte";
+  import PostCard from "$lib/components/PostCard.svelte";
   import Loading from "$lib/components/Loading.svelte";
 
   export let data: PageData;
@@ -12,7 +12,7 @@
     <Loading />
   {:then loaded}
     {#each loaded as post (post.id)}
-      <Post {post} />
+      <PostCard {post} />
       <div class="h-4"></div>
     {/each}
   {/await}
