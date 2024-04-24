@@ -1,4 +1,4 @@
-import { fail, error,  redirect } from "@sveltejs/kit";
+import { fail, error, redirect } from "@sveltejs/kit";
 import { z } from "zod";
 import prisma from "$lib/server/prisma";
 import { updatePost } from "$lib/server/fn/db";
@@ -16,7 +16,6 @@ export const load = (async ({ params: { id }, locals }) => {
   if (!post) error(404, "Post not found");
   return { post, userId };
 }) satisfies PageServerLoad;
-
 
 export const actions = {
   publishPost: async ({ params: { id } }) => {
@@ -44,14 +43,14 @@ export const actions = {
       title: z.string(),
       content: z.string(),
     });
-    const { success, error:issue, data } = Schema.safeParse(object);
+    const { success, error: issue, data } = Schema.safeParse(object);
 
     if (!success) {
       return fail(422, { msg: issue.message });
     }
     const { title, content } = data;
 
-    await updatePost(parseInt(id,10), title, content);
-    throw redirect(303, `/p/${id}`)
-  }
+    await updatePost(parseInt(id, 10), title, content);
+    throw redirect(303, `/p/${id}`);
+  },
 } satisfies Actions;

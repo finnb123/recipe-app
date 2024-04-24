@@ -57,11 +57,11 @@ export const deleteSession = async (email: string) => {
 
 export const updatePost = async (id: number, title: string, content: string) => {
   const response = await prisma.post.update({
-    where: { id, },
+    where: { id },
     data: {
       title,
       content,
     },
-  })
+  });
   return response;
 };
