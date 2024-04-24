@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Post from "$lib/components/Post.svelte";
+  import PostCard from "$lib/components/PostCard.svelte";
   // use prettier 👇
   import type { PageData } from "./$types";
   import MinorButton from "$lib/components/buttons/MinorButton.svelte";
@@ -21,7 +21,7 @@
     </div>
     <div>
       {#each data.drafts as post (post.id)}
-        <Post {post} />
+        <PostCard {post} />
       {/each}
     </div>
   </main>
