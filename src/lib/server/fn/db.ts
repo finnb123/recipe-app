@@ -1,5 +1,5 @@
 import { fail } from "@sveltejs/kit";
-import prisma from "./prisma";
+import prisma from "../prisma";
 
 // this is good but consider separating out into different files
 // also, use prettier
@@ -52,5 +52,16 @@ export const deleteSession = async (email: string) => {
       id: +id.id,
     },
   });
+  return response;
+};
+
+export const updatePost = async (id: number, title: string, content: string) => {
+  const response = await prisma.post.update({
+    where: { id, },
+    data: {
+      title,
+      content,
+    },
+  })
   return response;
 };
